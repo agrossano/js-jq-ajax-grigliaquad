@@ -17,6 +17,9 @@
 }
 
 .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: calc(80vh / 6);
   height: calc(80vh / 6);
   background-color: white;

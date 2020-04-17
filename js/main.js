@@ -25,9 +25,11 @@ $(document).ready(function () {
         if (data.response <= 5) {
           $(element).removeClass("green")
           $(element).addClass("yellow")
+          $("h1", element).html(data.response)
         } else {
           $(element).removeClass("yellow")
           $(element).addClass("green")
+          $("h1", element).html(data.response)
         }
       }
     });
