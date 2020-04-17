@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.griglia {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vh;
+  height: 80vh;
+}
+
+.box {
+  width: calc(80vh / 6);
+  height: calc(80vh / 6);
+  background-color: white;
+  border: solid 1px black;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
