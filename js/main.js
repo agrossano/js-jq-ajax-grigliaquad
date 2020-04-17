@@ -21,13 +21,11 @@ $(document).ready(function () {
     $.ajax({
       url: "https://flynn.boolean.careers/exercises/api/random/int",
       method: "GET",
-      success: function (data, stato) {
+      success: function (data) {
         if (data.response <= 5) {
-          $(element).removeClass("green")
           $(element).addClass("yellow")
           $("h1", element).html(data.response)
         } else {
-          $(element).removeClass("yellow")
           $(element).addClass("green")
           $("h1", element).html(data.response)
         }
