@@ -15,6 +15,12 @@ varie che vi vengono in mente per sperimentare;
 $(document).ready(function () {
 
 
+  (function () {
+    for (var i = 0; i < 36; i++) {
+      $('.griglia').append('<div class="box"><h1></h1></div>')
+    }
+  })
+    ();
 
   $(".box").click(function () {
     var element = this
@@ -38,9 +44,6 @@ $(document).ready(function () {
     });
 
   });
-
-
-
 
 
 });
