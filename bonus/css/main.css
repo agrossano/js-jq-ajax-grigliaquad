@@ -4,9 +4,21 @@
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(
+    to right,
+    rgba(12, 169, 25, 1) 0%,
+    rgba(255, 255, 41, 1) 100%
+  );
+  font-family: Lato;
+  overflow: hidden;
+}
+
 .container {
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .griglia {
@@ -14,22 +26,64 @@
   flex-wrap: wrap;
   width: 80vh;
   height: 80vh;
+  box-shadow: inset;
 }
 
 .box {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   width: calc(80vh / 6);
   height: calc(80vh / 6);
-  background-color: white;
-  border: solid 1px black;
+  background: linear-gradient(225deg, #f9fef1, #d2d5cb);
+  animation-name: moveInTop;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+  border-radius: 100%;
+}
+
+h1 {
+  font-size: 50px;
+  color: #202020;
+  text-shadow: 1px 1px 0 #30a3bf, 2px 2px 0 #30a3bf, 3px 3px 0 #30a3bf,
+    4px 4px 0 #30a3bf, 5px 5px 0 #30a3bf, 6px 6px 0 #30a3bf, 7px 7px 0 #30a3bf,
+    8px 8px 0 #30a3bf, 9px 9px 0 #fff, 10px 10px 0 #88bf37, 11px 11px 0 #88bf37,
+    12px 12px 0 #88bf37, 13px 13px 0 #88bf37, 14px 14px 0 #88bf37,
+    15px 15px 0 #88bf37, 16px 16px 0 #88bf37, 17px 17px 0 #88bf37,
+    18px 18px 0 #ddd, 19px 19px 0 #f29524, 20px 20px 0 #f29524,
+    21px 21px 0 #f29524, 22px 22px 0 #f29524, 23px 23px 0 #f29524,
+    24px 24px 0 #f29524, 25px 25px 0 #f29524, 26px 26px 0 #f29524;
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px);
+    transform: rotate(0deg);
+    transform: skew(0deg, 200deg);
+    border: 0px solid black;
+  }
+
+  80% {
+    transform: rotate(60deg);
+    transform: skew(360deg, 0deg);
+    border: 0px solid black;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(50px);
+    transform: rotate(40deg);
+    border: 0px solid black;
+  }
 }
 
 .green {
-  background-color: green;
+  background: linear-gradient(225deg, #0ec91d, #0ca918);
+  box-shadow: -35px 35px 52px #0ba017, 35px 35px 52px #0fd81f;
 }
 
 .yellow {
-  background-color: yellow;
+  background: linear-gradient(225deg, #feff29, #d5e622);
+  box-shadow: -35px 35px 52px #c9d920, 35px -16px 52px #ffff2c;
 }

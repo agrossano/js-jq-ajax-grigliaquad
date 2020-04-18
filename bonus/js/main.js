@@ -15,35 +15,44 @@ varie che vi vengono in mente per sperimentare;
 $(document).ready(function () {
 
 
-  (function () {
+  function timeAppend() {
     for (var i = 0; i < 36; i++) {
-      $('.griglia').append('<div class="box"><h1></h1></div>')
+      setTimeout(function () {
+        appendi()
+      }, 40 * i);
     }
-  })
-    ();
+  }
+  timeAppend()
+  function appendi() {
+    $('.griglia').append('<div class="box"><h1></h1></div>')
+  }
 
-  $(".box").click(function () {
-    var element = this
-    $.ajax({
-      url: "https://flynn.boolean.careers/exercises/api/random/int",
-      method: "GET",
-      success: function (data) {
-        if ($(element).data("status") == "active") {
-          alert('Già cliccato.')
-        } else if (data.response <= 5) {
-          $(element).addClass("yellow")
-          $("h1", element).html(data.response)
-          $(element).data("status", "active");
+  setTimeout(() => {
+    $(".box").click(function () {
+      var element = this
+      $.ajax({
+        url: "https://flynn.boolean.careers/exercises/api/random/int",
+        method: "GET",
+        success: function (data) {
+          if ($(element).data("status") == "active") {
+            alert('Già cliccato.')
+          } else if (data.response <= 5) {
+            $(element).addClass("yellow")
+            $("h1", element).html(data.response)
+            $(element).data("status", "active");
 
-        } else {
-          $(element).addClass("green")
-          $("h1", element).html(data.response)
-          $(element).data("status", "active");
+          } else {
+            $(element).addClass("green")
+            $("h1", element).html(data.response)
+            $(element).data("status", "active");
+          }
         }
-      }
+      });
+
     });
 
-  });
+  }, 1800);
+
 
 
 });
